@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kai Rekha 2.0 – Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-container {
+      margin-top: 180px;
+      max-width: 420px;
+      background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%);
+      color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(60,60,100,0.10);
+      padding: 2.5em 2em;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+    .contact-container h2 {
+      color: #ff5dd9;
+      margin-bottom: 1em;
+      text-align: center;
+      font-size: 2em;
+    }
+    .contact-info {
+      margin-bottom: 2em;
+    }
+    .contact-info li {
+      margin-bottom: 0.7em;
+      list-style: none;
+    }
+    .contact-form label {
+      color: #fff;
+      font-weight: 500;
+      margin-top: 1em;
+      display: block;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.7em;
+      margin-top: 0.3em;
+      margin-bottom: 1em;
+      border-radius: 6px;
+      border: 1.5px solid #a3bffa;
+      background: #f8fafc;
+      color: #22223b;
+      font-size: 1em;
+      resize: none;
+    }
+    .contact-form button {
+      background: #ff5dd9;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.7em 2em;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5em;
+    }
+    .contact-form button:hover {
+      background: #b605b9;
+    }
+    .social-row {
+      display: flex;
+      gap: 1.2em;
+      justify-content: center;
+      margin-top: 1.5em;
+    }
+    .social-btn {
+      background: #fff;
+      color: #7f53ac;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .social-btn:hover {
+      background: #ff5dd9;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav nav-bar-flex">
+      <div class="brand-group">
+        <h1>Kai Rekha 2.0</h1>
+        <h4>Decoding your FUTURE (MayBe)</h4>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact-container">
+    <h2>Contact Us (But Don’t Expect Much)</h2>
+    <ul class="contact-info">
+      <li><strong>Email:</strong> <a href="mailto:contact@totallyrealpalmreader.com" style="color:#fff;text-decoration:underline;" onclick="return showEmailMsg(event)">contact@totallyrealpalmreader.com</a></li>
+      <li><strong>Phone:</strong> <span style="color:#fff;cursor:pointer;" onclick="showPhoneMsg()">+91-000-000-0000</span></li>
+      <li><strong>Address:</strong> Somewhere between the lines on your hand.</li>
+    </ul>
+    <form class="contact-form" onsubmit="return showFormMsg(event)">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your human name, not your soul name." required>
+      <label for="message">Message</label>
+      <textarea id="message" rows="3" placeholder="Type your message here..."></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <div class="social-row">
+      <button class="social-btn" title="Facebook" onclick="showSocialMsg('facebook')">📘</button>
+      <button class="social-btn" title="Instagram" onclick="showSocialMsg('instagram')">📸</button>
+      <button class="social-btn" title="Twitter" onclick="showSocialMsg('twitter')">🐦</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>⚠ This site is 100% fake. Trust your snacks, not us.</p>
+  </footer>
+
+  <script>
+    function showEmailMsg(e) {
+      e.preventDefault();
+      alert("We have foreseen your message. No need to send it.");
+      return false;
+    }
+    function showPhoneMsg() {
+      alert("We’re currently meditating with our crystals. Try again in your next life.");
+    }
+    function showFormMsg(e) {
+      e.preventDefault();
+      alert("The universe already knows your problem.");
+      return false;
+    }
+    function showSocialMsg(platform) {
+      if(platform === 'facebook') {
+        alert("We don’t have Facebook… we have Face-reading.");
+      } else if(platform === 'instagram') {
+        alert("Sorry, the stars are offline.");
+      } else if(platform === 'twitter') {
+        alert("We only tweet in ancient prophecy language.");
+      }
+    }
+    // Optional: Message box popup on typing
+    document.getElementById('message').addEventListener('input', function() {
+      if(this.value.length === 1) {
+        alert("The universe already knows your problem.");
+      }
+    });
+  </script>

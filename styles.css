@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #0b0423;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Styles */
+.nav {
+  width: 100%;
+  background-color: #100733;
+  padding: 1em 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-bar-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2em;
+}
+
+.brand-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brand-group h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  background: linear-gradient(to right, rgb(147, 19, 180), rgb(248, 245, 245));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0;
+}
+
+.brand-group h4 {
+  font-weight: normal;
+  color: #b605b9;
+  margin: 0 0 8px 2px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  margin-top: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ccc;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #370f8e;
+  color: #b605b9;
+}
+
+@media (max-width: 700px) {
+  .nav-bar-flex {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .nav-links {
+    flex-direction: row;
+    gap: 1em;
+    margin-top: 0;
+    justify-content: flex-start;
+  }
+  .brand-group h1 {
+    font-size: 35px;
+  }
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6em 2em 2em;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-text h2 {
+  font-size: 67px;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+.hero-text span {
+  color: #ff5dd9;
+}
+
+.hero-text p {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.hero-img img {
+  max-width: 400px;
+  margin-top: 100px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 50px #e92fbd);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Button Styles */
+button, .btn-primary, .btn-secondary {
+  padding: 0.8em 1.5em;
+  background: #ff5dd9;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+button:hover, .btn-primary:hover {
+  background: #e92fbd;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #ff5dd9;
+  color: #ff5dd9;
+}
+
+.btn-secondary:hover {
+  background: #ff5dd9;
+  color: #fff;
+}
+
+/* Form Styling */
+.form-container {
+  margin-top: 180px;
+  border-top: 100px;
+  max-width: 400px;
+  margin: 6em auto 2em;
+  background: #070107;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 93, 217, 0.4);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: #ff5dd9;
+  font-size: 1.8em;
+}
+
+label {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+  font-weight: bold;
+  color: #ff5dd9;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border-radius: 6px;
+  border: 2px solid #2c1460;
+  outline: none;
+  background: #1a0a3a;
+  color: #fff;
+  font-size: 16px;
+}
+
+input:focus, select:focus {
+  border-color: #ff5dd9;
+  box-shadow: 0 0 10px rgba(255, 93, 217, 0.3);
+}
+
+/* Astrologers Section */
+.astrologers {
+  text-align: center;
+  margin: 3em 0 2em 0;
+  padding: 0 2em;
+}
+
+.astrologers h2 {
+  font-size: 2.5em;
+  color: #b605b9;
+  margin-bottom: 2em;
+}
+
+.astrologer-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.astrologer-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  min-height: 370px;
+  max-height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.22, 1.61, 0.36, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.astrologer-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #b605b9;
+  margin-bottom: 1.5em;
+  background: #f8e6fa;
+}
+.astrologer-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.astrologer-card h3 {
+  margin: 0.5em 0;
+  color: #9313b4;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.astrologer-card p {
+  color: #555;
+  font-size: 1em;
+  margin-bottom: 1.5em;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.astro-btn {
+  background-color: #b605b9;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.astro-btn:hover {
+  background-color: #8c038f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .astrologer-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .astrologer-card {
+    width: 90vw;
+    min-width: 0;
+    max-width: 340px;
+    min-height: 340px;
+    max-height: none;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2em;
+  background-color: #100733;
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: auto;
+  border-top:
+}
