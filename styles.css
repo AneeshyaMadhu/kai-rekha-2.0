@@ -266,6 +266,7 @@ input:focus, select:focus {
   cursor: pointer;
   text-align: center;
   box-sizing: border-box;
+  background-color: 0.3s ease;
 }
 
 .astrologer-card img {
@@ -279,7 +280,8 @@ input:focus, select:focus {
 }
 .astrologer-card:hover {
   transform: scale(1.08);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(137, 60, 60, 0.15);
+  background-color: lightgray;
 }
 
 .astrologer-card h3 {
@@ -328,8 +330,6 @@ input:focus, select:focus {
     max-height: none;
   }
 }
-
-/* Footer */
 footer {
   text-align: center;
   padding: 2em;

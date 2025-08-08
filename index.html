@@ -5,6 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kai Rekha 2.0 – Useless Palm Reader</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Animated gradient for main heading */
+    .brand-group h1 {
+      font-size: 50px;
+      font-weight: bolder;
+      background: linear-gradient(90deg, #ff5dd9, #7f53ac, #647dee, #ff5dd9);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-move 3s ease-in-out infinite alternate;
+      margin-bottom: 0;
+    }
+    @keyframes gradient-move {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Full animated background */
+    body {
+      min-height: 100vh;
+      background: linear-gradient(120deg, #0b0423 0%, #0e0a13 50%, #85126b 100%);
+      background-size: 200% 200%;
+      animation: bg-move 8s ease-in-out infinite alternate;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    @keyframes bg-move {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Modal styles for predictions */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(9, 8, 15, 0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+      z-index: 9999;
+    }
+    .modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-content {
+      background: linear-gradient(180deg, #fff, #fbf8ff);
+      border-radius: 12px;
+      padding: 20px 22px;
+      width: min(92%, 420px);
+      box-shadow: 0 14px 40px rgba(12, 6, 30, 0.5);
+      text-align: center;
+      position: relative;
+    }
+    #modalTitle {
+      margin: 0 0 8px;
+      color: #4b2178;
+      font-size: 1.15rem;
+    }
+    #modalText {
+      margin: 0;
+      color: #2b2034;
+      line-height: 1.4;
+      font-size: 0.98rem;
+    }
+    .close-btn {
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      border: none;
+      background: transparent;
+      font-size: 20px;
+      cursor: pointer;
+      color: #6b4a9a;
+    }
+    .see-pred-btn {
+      background: linear-gradient(90deg,#6f4ef8,#8d5bf7);
+      color: white;
+      border: 0;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: transform 0.2s;
+    }
+    .see-pred-btn:hover { transform: translateY(-2px); }
+  </style>
 </head>
 <body>
 
@@ -17,9 +110,9 @@
       <nav>
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="services.html" >Services</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="contact.html" >Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -45,25 +138,88 @@
         <img src="ass1.jpg" alt="Mystic Luna" />
         <h3>Mystic Luna</h3>
         <p>Specializes in love and relationships.</p>
-        <a href="foolish.html" class="astro-btn">See Predictions</a>
+        <button class="see-pred-btn">See Predictions</button>
       </div>
       <div class="astrologer-card">
         <img src="ass2.jpg" alt="Cosmic Oracle" />
         <h3>Cosmic Oracle</h3>
         <p>Expert in career and finance.</p>
-        <a href="foolish.html" class="astro-btn">See Predictions</a>
+        <button class="see-pred-btn">See Predictions</button>
       </div>
       <div class="astrologer-card">
         <img src="ass3.jpg" alt="Stellar Sage" />
         <h3>Stellar Sage</h3>
         <p>Focuses on health and wellness.</p>
-        <a href="foolish.html" class="astro-btn">See Predictions</a>
+        <button class="see-pred-btn">See Predictions</button>
       </div>
     </div>
   </section>
+
+  <!-- Prediction Modal -->
+  <div id="predictionModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close-btn" aria-label="Close">×</button>
+      <h2 id="modalTitle">Prediction</h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
 
   <footer>
     <p>⚠ This site is 100% fake. Trust your snacks, not us.</p>
   </footer>
 
+  <script>
+  (function(){
+    const nonsense = [
+      "🤨 You really think this astrologer can predict your future? They can’t even predict what’s for lunch.",
+      "The stars whisper: your left sock will gain consciousness tomorrow at 2:17 PM.",
+      "An old pineapple will send you a postcard; answer with a haiku.",
+      "Tomorrow you will find ₹7 and a mysterious stick that only opens jars.",
+      "Beware: spoons are plotting to rearrange your cutlery drawer.",
+      "Your secret talent: making sandwiches that give life advice.",
+      "You will befriend a cat who only speaks in puns.",
+      "Incoming fortune: you will be incredibly decisive about tea vs coffee.",
+      "An eccentric pigeon will teach you jazz hands next Tuesday.",
+      "The universe suggests: dance when elevator music starts — it helps.",
+      "Cosmic tip: plants prefer podcasts to classical music (true-ish).",
+      "Kai Rekha 2.0 says: your palm line scheduled a nap for you."
+    ];
+
+    const modal = document.getElementById('predictionModal');
+    const modalText = document.getElementById('modalText');
+    const closeBtn = modal.querySelector('.close-btn');
+
+    function showModal(text) {
+      modalText.textContent = text;
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+      clearTimeout(window._modalAutoClose);
+      window._modalAutoClose = setTimeout(closeModal, 6000);
+    }
+
+    function closeModal() {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+      clearTimeout(window._modalAutoClose);
+    }
+
+    document.querySelectorAll('.see-pred-btn').forEach(btn => {
+      btn.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        const pick = nonsense[Math.floor(Math.random() * nonsense.length)];
+        showModal(pick);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+  </script>
+  
 </body>
+</html>
