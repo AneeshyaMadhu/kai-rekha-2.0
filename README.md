@@ -11,7 +11,7 @@
 ### Team Members
 
 - Member 2: [Aneeshya K Madhu] - [GEC IDUKKI]
-- Member 3: [Malavika K C] - [GEC IDUKKI]
+- Member 3: [Malavika K C] @malavikhaah - [GEC IDUKKI]
 
 ### Project Description
 Kai Rekha 2.0 is a parody palm reading website that serves hilariously fake predictions. From sarcastic astrologers to absurd fortunes, it’s 0% accurate but 100% guaranteed to make you laugh.
