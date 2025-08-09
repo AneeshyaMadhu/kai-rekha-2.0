@@ -42,15 +42,14 @@ cd kai-rekha-2.0
 For Software:
 
 # Screenshots (Add at least 3)
-![home.png]
+![home.png](C:\Users\anees\OneDrive\Desktop\kai-rekha-2.0\home.png)
 Home page with a flashy welcome to the world’s most inaccurate palm reading.
 
-![dtls.png]
+![dtls.png](C:\Users\anees\OneDrive\Desktop\kai-rekha-2.0\dtls.png)
 User entering palm details for an AI-driven “mystical” prediction.
 
-![rslt.png]
+![rslt.png](C:\Users\anees\OneDrive\Desktop\kai-rekha-2.0\rslt.png)
 Results page serving your fake future with style.
-
 # Diagrams
 User enters details → System applies “fake logic” → Generates a fun prediction.
 Made with ❤️ at TinkerHub Useless Projects 
