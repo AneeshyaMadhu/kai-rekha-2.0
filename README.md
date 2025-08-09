@@ -43,7 +43,10 @@ For Software:
 ![Home Page](home.png)
 ![Details Page](dtls.png)
 ![Results Page](rslt.png)
+#sreen recording
+[https://drive.google.com/file/d/1tzM099QM2PQ9GR66Blc_r56wPXUlhANd/view?usp=drive_link]
 
+ 
 # Diagrams
 User enters details → System applies “fake logic” → Generates a fun prediction.
 Made with ❤️ at TinkerHub Useless Projects 
