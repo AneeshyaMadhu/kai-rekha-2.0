@@ -40,8 +40,6 @@ cd kai-rekha-2.0
 
 ### Project Documentation
 For Software:
-
-# Screenshots (Add at least 3)
 ![Home Page](home.png)
 ![Details Page](dtls.png)
 ![Results Page](rslt.png)
