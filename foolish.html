@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foolish Prediction</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .foolish-box {
+      margin: 200px auto 0 auto;
+      max-width: 400px;
+      background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%);
+      color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(60,60,100,0.10);
+      padding: 2em 1.5em;
+      text-align: center;
+      font-size: 1.3em;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .foolish-box button {
+      margin-top: 2em;
+      background: #ff5dd9;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.7em 2em;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .foolish-box button:hover {
+      background: #b605b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="foolish-box" id="foolishBox">
+    <!-- Message will appear here -->
+  </div>
+  <script>
+    const messages = [
+      "Oops! The stars are on a coffee break ☕️✨",
+      "Prediction: You will read a silly message right now!",
+      "Sorry, our astrologer is busy binge-watching cat videos 🐱",
+      "Your future is as clear as mud. Try again later!",
+      "The universe says: Eat more snacks 🍪",
+      "Palm reading failed. Please use your other hand!",
+      "Cosmic error 404: Destiny not found.",
+      "You are destined to smile at this message 😁"
+    ];
+    function showMessage() {
+      const box = document.getElementById('foolishBox');
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      box.innerHTML = `<div>${msg}</div>
+        <button onclick="showMessage()">Show Another</button>
+        <br><button onclick="window.location.href='index.html'">Back to Home</button>`;
+    }
+    showMessage();
+  </script>
+</body>
+</html>
